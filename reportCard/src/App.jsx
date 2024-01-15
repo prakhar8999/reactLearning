@@ -40,10 +40,10 @@ function App() {
         <h1 className='font-bold pt-8 text-white text-4xl text-center '>Report Card</h1>
         <br />
         <div className=' flex flex-wrap justify-center text-center gap-24 '>
-        <DivUp input1={physics} subject="Physics" placeHolderValue = "Physics Marks" onSubjectValueChange={ (marks) => setPhysics(marks)} />
-        <DivUp input1={chemistry} subject="Chemistry" placeHolderValue = "Chemistry Marks" onSubjectValueChange={ (marks) => setchemistry(marks)} />
-        <DivUp input1={math} subject="Mathematics" placeHolderValue = "Mathematics Marks" onSubjectValueChange={ (marks) => setmaths(marks)} />
-        <DivUp input1={bio} subject="Biology" placeHolderValue = "Biology Marks" onSubjectValueChange={ (marks) => setbio(marks)} />
+        <DivUp subject="Physics"/>
+        <DivUp subject="Chemistry"/>
+        <DivUp subject="Mathematics"/>
+        <DivUp subject="Biology"/>
         </div>
         <div className=' flex flex-wrap justify-center text-center'>
         <DivDown input1={physics} placeHolderValue = "Physics Marks" onSubjectValueChange={ (marks) => setPhysics(marks)} />
