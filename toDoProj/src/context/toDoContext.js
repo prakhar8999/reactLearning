@@ -15,10 +15,10 @@ const toDoContext = React.createContext({
     toggleComplete : (id) => {}
 })
 
-const toDoContextProvider = toDoContext.Provider
+const ToDoContextProvider = toDoContext.Provider
 
 const useTodo = () => {
     return useContext(toDoContext)
 }  
 
-export {toDoContext, toDoContextProvider, useTodo}
+export {toDoContext, ToDoContextProvider, useTodo}

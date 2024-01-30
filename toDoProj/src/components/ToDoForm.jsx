@@ -2,16 +2,20 @@ import React, { useState, useContext } from 'react'
 import { useTodo } from '../context/toDoContext'
 
 function ToDoForm() {
+    //For Individual todo
     const [todo, setTodo] = useState("")
 
     const {addToDo} = useTodo()
+
     const add = (e) => {
         e.preventDefault()
+
         if(!todo) return
 
-        addToDo({ todo : todo,completed : false })
+        addToDo({todo : todo, completed: false})
         setTodo("")
     }
+
     
 
     return (

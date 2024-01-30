@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { toDoContextProvider } from './context/toDoContext'
+import { ToDoContextProvider } from './context/toDoContext'
 import './App.css'
 import ToDoForm from './components/ToDoForm'
+import TodoItem from './components/ToDoItem'
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -19,7 +20,7 @@ function App() {
   }
 
   const toggleComplete = (id) => {
-    setTodos((prev) => prev.map((prevTodo) => prevTodo === id ? {...prevTodo, completed : !prevTodo.completed} : prevTodo))
+    setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed : !prevTodo.completed} : prevTodo))
   }
 
   useEffect(() => {
@@ -34,7 +35,7 @@ function App() {
   }, [todos])
 
   return (
-    <toDoContextProvider value={{todos, addToDo, updateToDo, deleteToDo, toggleComplete}}>
+    <ToDoContextProvider value={{todos, addToDo, updateToDo, deleteToDo, toggleComplete}}>
       <div className="bg-[#172842] min-h-screen py-8">
         <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
@@ -43,10 +44,15 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
+            {todos.map((todo) => (
+              <div key={todo.id} className='w-full'>
+                  <TodoItem todo={todo} />
+              </div>
+              ))}
           </div>
         </div>
       </div>
-    </toDoContextProvider>
+    </ToDoContextProvider>
   )
 }
 
