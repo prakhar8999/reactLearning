@@ -3,6 +3,8 @@ import './App.css'
 import AddRow from './components/AddRow'
 import ViewRow from './components/ViewRow'
 import { CrudContextProvider } from './context/crudContext'
+import React from 'react'
+import { v4 as uuidv4 } from 'uuid';//used for generating unique ID for each iteration of map
 
 function App() {
   const [data, setData] = useState([])
@@ -28,7 +30,7 @@ function App() {
       <hr className=' border-t-2 border-black' />
       <br />
       {data.map((sinData) => (
-        <div key={Date.now()} className='w-full'>
+        <div key={uuidv4()} className='w-full'>
           <ViewRow sinData ={sinData} />
         </div>
       ))}
