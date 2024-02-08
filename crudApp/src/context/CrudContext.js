@@ -12,7 +12,7 @@ const CrudContext = React.createContext({
     ],
     addDetail : (enteredData) => {},
     deleteDetail : (id) =>{},
-    updateCrud : (id, name, age, city, hobby) => {}
+    updateCrud : (id, {data}) => {}
 })
 
 const CrudContextProvider = CrudContext.Provider

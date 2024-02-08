@@ -31,8 +31,7 @@ function App() {
         <div key={Date.now()} className='w-full'>
           <ViewRow sinData ={sinData} />
         </div>
-      ))
-        }
+      ))}
     </CrudContextProvider>
   )
 }

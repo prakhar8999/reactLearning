@@ -19,10 +19,6 @@ function ViewRow({sinData}) {
         setdataEditable(true)
     }
 
-    
-
-
-
     return (
     <>
         <table className="w-full">
