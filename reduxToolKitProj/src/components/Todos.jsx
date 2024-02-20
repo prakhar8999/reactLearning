@@ -4,7 +4,7 @@ import {removeTodo, updateTodo} from '../features/todos/todoSlice'
 import { nanoid } from '@reduxjs/toolkit'
 
 function Todos({todo}) {
-    const todos = useSelector(state => state.todos)
+    //const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
 
     const [txt,setTxt] = useState(todo.text)
@@ -17,7 +17,7 @@ function Todos({todo}) {
       else{
         dispatch(updateTodo({id : todo.id,text : txt}))
         setisEditable(false)
-        
+      
     }
   }
 

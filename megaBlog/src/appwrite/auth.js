@@ -1,17 +1,16 @@
+import confVariable from '../confVariable/confVariable.js';
 import { Client, Account, ID } from "appwrite";
-import confVariable  from './confVariable/confVariable'
 
-
-export class authService {
-    client = new Client()
+export class AuthService {
+    client = new Client();
     account;
 
     constructor() {
         this.client
-            .setEndpoint(confVariable.appwriteUrl) // Your API Endpoint
-            .setProject(confVariable.projectId);   // Your project ID
+            .setEndpoint(confVariable.appwriteUrl)
+            .setProject(confVariable.appwriteProjectId);
         this.account = new Account(this.client);
-
+            
     }
 
     async createAccount({email,password,name}){
@@ -41,9 +40,8 @@ export class authService {
             return await this.account.get();
         } catch (error) {
             throw error;
-            return null;
         }
-        
+        return null;
     }
 
     async logOut(){
@@ -55,6 +53,6 @@ export class authService {
     }
 }
 
-const authServiceObj =  new authService();
+const authService = new AuthService();
 
-export default authServiceObj
+export default authService
