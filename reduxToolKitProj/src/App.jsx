@@ -1,11 +1,22 @@
 import AddTodo from './components/AddToDo'
 import './App.css'
 import Todos from './components/Todos'
-import { useSelector } from 'react-redux'
-import { nanoid } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { addTodo } from './features/todos/todoSlice'
 
-function App() {
-  const todos = useSelector(state => state.todos)
+const App = () => {
+  const dispatch = useDispatch();
+  const todos = useSelector(state => state.todos);
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+    storedTodos.forEach(todo => dispatch(addTodo(todo.text)));
+  },[dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('todos',JSON.stringify(todos));
+  })
 
   return (
     <>
@@ -13,7 +24,7 @@ function App() {
       <AddTodo />
       <div>Todos</div>
       {todos.map((todo) => (
-      <div key={nanoid()} className='w-full'>
+      <div key={todo.id} className='w-full'>
               <Todos todo={todo} />
       </div>
       ))}
