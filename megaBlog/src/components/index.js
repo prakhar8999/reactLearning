@@ -3,6 +3,8 @@ import Header from './Header/header'
 import Container from './container/container'
 import Logo from './Logo'
 import LogOutBtn from './Header/logOutBtn'
+import InputVar from './Input'
+import Button from './Button'
 
 
 export {
@@ -10,5 +12,7 @@ export {
     Header,
     Container,
     Logo,
-    LogOutBtn
+    LogOutBtn,
+    InputVar,
+    Button
 }
