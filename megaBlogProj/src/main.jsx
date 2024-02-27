@@ -5,17 +5,17 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './pages/home.jsx'
-import { AuthLayoutProtected, Login } from './components/index.js'
+import Home from './pages/Home.jsx'
+import { AuthLayout, Login } from './components/index.js'
 
 
-import AddPost from "./pages/addPost.jsx";
-import Signup from './pages/signUp.jsx'
-import EditPost from "./pages/editPost.jsx";
+import AddPost from "./pages/AddPost";
+import Signup from './pages/Signup'
+import EditPost from "./pages/EditPost";
 
-import Post from "./pages/post.jsx";
+import Post from "./pages/Post";
 
-import AllPosts from "./pages/allPost.jsx";
+import AllPosts from "./pages/AllPosts";
 
 const router = createBrowserRouter([
   {
@@ -29,44 +29,44 @@ const router = createBrowserRouter([
         {
             path: "/login",
             element: (
-                <AuthLayoutProtected authentication={false}>
+                <AuthLayout authentication={false}>
                     <Login />
-                </AuthLayoutProtected>
+                </AuthLayout>
             ),
         },
         {
             path: "/signup",
             element: (
-                <AuthLayoutProtected authentication={false}>
+                <AuthLayout authentication={false}>
                     <Signup />
-                </AuthLayoutProtected>
+                </AuthLayout>
             ),
         },
         {
             path: "/all-posts",
             element: (
-                <AuthLayoutProtected authentication>
+                <AuthLayout authentication>
                     {" "}
                     <AllPosts />
-                </AuthLayoutProtected>
+                </AuthLayout>
             ),
         },
         {
             path: "/add-post",
             element: (
-                <AuthLayoutProtected authentication>
+                <AuthLayout authentication>
                     {" "}
                     <AddPost />
-                </AuthLayoutProtected>
+                </AuthLayout>
             ),
         },
         {
             path: "/edit-post/:slug",
             element: (
-                <AuthLayoutProtected authentication>
+                <AuthLayout authentication>
                     {" "}
                     <EditPost />
-                </AuthLayoutProtected>
+                </AuthLayout>
             ),
         },
         {

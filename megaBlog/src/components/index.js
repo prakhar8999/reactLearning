@@ -5,7 +5,13 @@ import Logo from './Logo'
 import LogOutBtn from './Header/logOutBtn'
 import InputVar from './Input'
 import Button from './Button'
-
+import RTE from './RTE'
+import Select from './Select'
+import Signup from './SignUp'
+import PostForm from '../components/Post-Form/postForm.jsx'
+import PostCard from './PostCard.jsx'
+import AuthLayoutProtected from './authLayoutProtected.jsx'
+import Login from './Login.jsx'
 
 export {
     Footer,
@@ -14,5 +20,12 @@ export {
     Logo,
     LogOutBtn,
     InputVar,
-    Button
+    Button,
+    RTE,
+    Select,
+    Signup,
+    Login,
+    PostForm,
+    PostCard,
+    AuthLayoutProtected
 }
